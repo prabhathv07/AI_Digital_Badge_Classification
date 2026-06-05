@@ -254,4 +254,4 @@ For verification of contributions, contact: vipparthi.prabhathvinay23@gmail.com
 ## Contact
 
 **Prabhath Vinay Vipparthi**
-[LinkedIn](https://linkedin.com/in/prabhath-vinay-vipparthi-90544b225) · [Email](mailto:vipparthi.prabhathvinay23@gmail.com) · [GitHub](https://github.com/prabhathv07)
+[LinkedIn](https://www.linkedin.com/in/prabhath-vipparthi-90544b225/) · [Email](mailto:vipparthi.prabhathvinay23@gmail.com) · [GitHub](https://github.com/prabhathv07)
