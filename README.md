@@ -4,7 +4,7 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=flat&logo=spacy&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
-![Tests](https://img.shields.io/badge/Tests-308%20Passing-brightgreen)
+![Tests](https://img.shields.io/badge/Tests-350+%20Passing-brightgreen)
 ![Accuracy](https://img.shields.io/badge/Accuracy-100%25%2020%2F20-brightgreen)
 
 > A rule-based, explainable web prototype that automates the classification of NJIT's digital badges according to the institution's locked taxonomy — achieving **100% accuracy on 20 real-world badges** and providing a full audit trail.
