@@ -55,8 +55,8 @@ This document details my specific contributions to the AI-Assisted Digital Badge
 ## Validation Results
 
 ### Test Coverage
-- Total tests added: 61 (44 unit tests + 17 end-to-end tests)
-- Full test suite: 351 tests passing
+- Tests added in my branches: 61 (44 unit tests + 17 end-to-end tests)
+- Full team test suite: 351 tests passing
 - Pass rate: 100%
 
 ### Accuracy Metrics

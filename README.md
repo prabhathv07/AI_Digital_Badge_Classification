@@ -4,7 +4,11 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=flat&logo=spacy&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
-![Tests](https://img.shields.io/badge/Tests-350+%20Passing-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-351%20Passing-brightgreen)
+![Coverage](https://img.shields.io/badge/Coverage-85%25+-brightgreen)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Accuracy](https://img.shields.io/badge/Accuracy-100%25%2020%2F20-brightgreen)
 
 > A rule-based, explainable web prototype that automates the classification of NJIT's digital badges according to the institution's locked taxonomy — achieving **100% accuracy on 20 real-world badges** and providing a full audit trail.
@@ -421,7 +425,7 @@ Returns a paginated list of all governance log entries.
 | NLP Phrase Dictionary | 130+ student-friendly phrases for signal extraction across all taxonomy dimensions |
 | Regex Pattern Rules | 44 regex rules handling paraphrased and variant language |
 | Classification Engine | 3-stage deterministic rule engine (Category → Type → Level) |
-| Validation Framework | Pytest suite — 308 tests (unit, integration, end-to-end), 100% pass rate |
+| Validation Framework | Pytest suite — 351 tests (unit, integration, end-to-end), 100% pass rate |
 | Synthetic Dataset | 20 synthetic badges covering all taxonomy branches and edge cases |
 | ETL Pipeline | Excel → JSON → unified test set (29 master + 48 unified badges) |
 | Governance Logging | Rule trace system for explainability and human reviewer overrides |
@@ -433,7 +437,7 @@ Returns a paginated list of all governance log entries.
 | Metric | Result |
 |--------|--------|
 | Classification accuracy (20 real badges) | **100%** across all 5 dimensions |
-| Automated test suite | **308 tests — 100% pass rate** |
+| Automated test suite | **351 tests — 100% pass rate** |
 | NLP issuer detection (structured input) | 100% |
 | NLP issuer detection (free text) | 100% |
 | NLP audience detection (free text) | 80% |
@@ -514,7 +518,11 @@ def test_full_classification(badge, expected):
 | Validation | Pydantic 2.0+ | Badge Fact Sheet schema enforcement |
 | Frontend | React 18, Vite, Tailwind CSS | Submission + reviewer UI |
 | HTTP Client | Axios | Frontend → backend API calls |
-| Testing | pytest 7.x+ | 308-test validation suite |
+| Testing | pytest 7.x+, pytest-cov | 351-test validation suite with coverage reporting |
+| Migrations | Alembic 1.13+ | SQLAlchemy schema migrations |
+| Auth | python-jose, passlib | JWT-based reviewer authentication |
+| CI/CD | GitHub Actions | Automated test + lint on every push |
+| Containerization | Docker, Docker Compose | Reproducible dev and production environments |
 
 ---
 
@@ -524,10 +532,10 @@ def test_full_classification(badge, expected):
 
 ### Test Results
 ```
-308 tests collected
-308 passed, 0 failed
+351 tests collected
+351 passed, 0 failed
 Pass rate: 100%
-Runtime: ~3.2 seconds
+Runtime: ~3.8 seconds
 ```
 
 ### Coverage by Test Area
@@ -535,14 +543,14 @@ Runtime: ~3.2 seconds
 | Test Area | Scope | Tests |
 |---|---|---|
 | Accuracy matrix | 20 real NJIT badges — all 5 classification dimensions | 20 |
-| End-to-end scenarios | 7 full workflows covering all 3 input types (form, OBv3 JSON, free text) | 47 |
+| End-to-end scenarios | 7 full workflows covering all 3 input types (form, OBv3 JSON, free text) | 52 |
 | NLP extraction rate | Signal extraction accuracy measurement across structured and free-text inputs | 61 |
-| Classification engine | Rule engine unit tests — one test per rule, all stages | 58 |
-| Edge cases | 30 validation checks (whitespace, duplicates, short content, implied series) | 44 |
-| Explainability | Explanation content completeness and plain-English quality | 28 |
-| Governance logging | Log creation, override recording, immutability checks | 23 |
-| API integration | Full round-trip API tests for all 8 endpoints | 27 |
-| **Total** | | **308** |
+| Classification engine | Rule engine unit tests — one test per rule, all stages | 68 |
+| Edge cases | 30 validation checks (whitespace, duplicates, short content, implied series) | 52 |
+| Explainability | Explanation content completeness and plain-English quality | 33 |
+| Governance logging | Log creation, override recording, immutability checks | 28 |
+| API integration | Full round-trip API tests for all 8 endpoints | 37 |
+| **Total** | | **351** |
 
 ### Running the Tests
 
@@ -562,6 +570,15 @@ pytest tests/test_nlp_extraction.py -v
 
 >  Full source code is not publicly available (NDA). Setup instructions are shown here to demonstrate system architecture and deployment complexity.
 
+**Option A — Docker (recommended)**
+```bash
+docker compose up --build
+# → API:      http://localhost:8000
+# → Swagger:  http://localhost:8000/docs
+# → Frontend: http://localhost:5173
+```
+
+**Option B — Local**
 ```bash
 # Set up Python environment
 python3 -m venv venv && source venv/bin/activate
@@ -571,6 +588,9 @@ python -m spacy download en_core_web_sm
 # Configure environment
 cp .env.example .env
 # Set: USE_LLM=false, DATABASE_URL, REVIEWER_PASSWORD, ALLOWED_ORIGINS
+
+# Run database migrations
+alembic upgrade head
 
 # Start backend
 uvicorn app.main:app --reload
@@ -587,6 +607,11 @@ python scripts/load_sample_data.py
 # Verify health
 curl http://localhost:8000/health
 # → {"status": "ok", "version": "1.0.0", "nlp": {"spacy_available": true}}
+```
+
+**Running tests with coverage**
+```bash
+pytest tests/ -v --cov=app --cov-report=term-missing
 ```
 
 **Environment variables:**
@@ -660,7 +685,7 @@ All final decisions are made by explicit `if/elif` chains that mirror the locked
 | Metric | Result |
 |--------|--------|
 | Classification accuracy (20 real badges) | 100% across all dimensions |
-| Unit test pass rate | 100% (308/308) |
+| Unit test pass rate | 100% (351/351) |
 | NLP issuer detection — structured input | 100% |
 | NLP issuer detection — free text | 100% |
 | NLP audience detection — free text | 80% |

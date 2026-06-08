@@ -33,7 +33,7 @@ All code samples shown here are my original work, created during the capstone pr
 
 ---
 
-**Prabhath Vinay Vipparthi**  
-pv342@njit.edu  
-New Jersey Institute of Technology  
+**Prabhath Vinay Vipparthi**
+pv342@njit.edu · prabhath867@gmail.com
+New Jersey Institute of Technology
 Capstone Project - Spring 2026
