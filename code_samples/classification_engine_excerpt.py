@@ -4,7 +4,7 @@ Author: Prabhath Vinay Vipparthi
 Purpose: 3-stage deterministic rule engine for badge classification
 """
 
-from typing import Dict, Any, Optional
+from typing import Optional
 from dataclasses import dataclass
 
 
@@ -78,7 +78,6 @@ class ClassificationEngine:
         Stage 1: Determine badge category based on issuer and audience.
         """
         issuer = bfs.issuer.lower()
-        audience = bfs.audience_type.lower() if bfs.audience_type else ""
         
         # Rule: OSIL badges are Co-Curricular
         if "osil" in issuer:

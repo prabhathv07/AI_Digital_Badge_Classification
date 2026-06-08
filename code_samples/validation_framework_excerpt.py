@@ -5,7 +5,6 @@ Purpose: Comprehensive test suite for NLP and classification pipeline
 """
 
 import pytest
-from typing import Dict, Any
 
 
 class TestNLPStudentLanguage:
@@ -205,7 +204,7 @@ class TestEndToEndValidation:
         result = run_classification(bfs)
         
         assert result.level == "Terminal"
-        assert bfs.is_capstone == True
+        assert bfs.is_capstone
     
     def test_no_exceptions_thrown(self):
         """
