@@ -16,7 +16,7 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 
 # ── NLP ────────────────────────────────────────────────────────
-spacy==3.7.4
+spacy==3.8.14
 # After install: python -m spacy download en_core_web_sm
 
 # ── LLM Fallback (optional — requires USE_LLM=true in .env) ───
