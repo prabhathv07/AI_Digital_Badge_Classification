@@ -17,7 +17,7 @@
 
 > ## NDA Notice
 >
-> This repository is a **portfolio showcase only**. I contributed to this project as an AI/ML Engineering Intern at NJIT's Learning & Development Initiative (2025–2026) and am bound by a **Non-Disclosure Agreement**.
+> This repository is a **portfolio showcase only**. I contributed to this project as an AI Engineering at NJIT's Learning & Development Initiative (2025–2026) and am bound by a **Non-Disclosure Agreement**.
 >
 > - This repo contains: architecture overview, my personal contributions, sanitized code patterns, metrics, and system design decisions
 > - This repo does NOT contain: NJIT's full source code, confidential taxonomy rules, real badge data, or internal institutional documents
