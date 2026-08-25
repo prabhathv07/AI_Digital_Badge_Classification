@@ -9,15 +9,15 @@
 ![Coverage](https://img.shields.io/badge/Coverage-85%25+-brightgreen)
 ![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Accuracy](https://img.shields.io/badge/Accuracy-100%25%2020%2F20-brightgreen)
+![Evaluation](https://img.shields.io/badge/Evaluation-20%2F20%20badges%20matched-brightgreen)
 
-> A rule-based, explainable web prototype that automates the classification of NJIT's digital badges according to the institution's locked taxonomy — achieving **100% accuracy on 20 real-world badges** and providing a full audit trail.
+> A rule-based, explainable web prototype that automates the classification of NJIT's digital badges according to the institution's locked taxonomy — a deterministic rule engine reproducing the locked taxonomy correctly classified all 20 badges in the human-labeled evaluation set, validated by a 351-test suite (100% pass), and providing a full audit trail.
 
 ---
 
 > ## NDA Notice
 >
-> This repository is a **portfolio showcase only**. I contributed to this project as an AI Engineering at NJIT's Learning & Development Initiative (2025–2026) and am bound by a **Non-Disclosure Agreement**.
+> This repository is a **portfolio showcase only**. I contributed to this project as an AI/ML Engineering Intern at NJIT's Learning & Development Initiative (Jan–May 2026) and am bound by a **Non-Disclosure Agreement**.
 >
 > - This repo contains: architecture overview, my personal contributions, sanitized code patterns, metrics, and system design decisions
 > - This repo does NOT contain: NJIT's full source code, confidential taxonomy rules, real badge data, or internal institutional documents
@@ -436,7 +436,7 @@ Returns a paginated list of all governance log entries.
 
 | Metric | Result |
 |--------|--------|
-| Classification accuracy (20 real badges) | **100%** across all 5 dimensions |
+| Badges correctly classified (human-labeled evaluation set) | 20 / 20 across all 5 dimensions |
 | Automated test suite | **351 tests — 100% pass rate** |
 | NLP issuer detection (structured input) | 100% |
 | NLP issuer detection (free text) | 100% |
@@ -684,7 +684,7 @@ All final decisions are made by explicit `if/elif` chains that mirror the locked
 
 | Metric | Result |
 |--------|--------|
-| Classification accuracy (20 real badges) | 100% across all dimensions |
+| Badges correctly classified (human-labeled evaluation set) | 20 / 20 across all dimensions |
 | Unit test pass rate | 100% (351/351) |
 | NLP issuer detection — structured input | 100% |
 | NLP issuer detection — free text | 100% |
